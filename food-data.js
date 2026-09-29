@@ -26,18 +26,35 @@
     kawatoyo:{name:'川豊 本店',address:'千葉県成田市仲町386',near:'成田山表参道',eat:'鳗鱼饭，作为较早的午餐候选。',note:'不接受预约，现场取号；新年等位久就略过，保留 13:00 到机场的安排。',query:'川豊 本店 成田市仲町386',url:'https://unagi-kawatoyo.com/foreign/index_cn.html'}
   };
   const snacks = {
-    rice:{name:'Seicomart · HOT CHEF 饭团',note:'早出门或坐车时带一个；选有 HOT CHEF 的门店。',url:'https://partner.seicomart.co.jp/introduction.html'},
-    zangi:{name:'Seicomart · HOT CHEF 炸鸡',note:'ザンギ，买小份趁热吃；货架售完不一定马上补。',url:'https://www.seicomart.co.jp/instore/hotchef.html?mode=pc'},
-    pudding:{name:'Secoma 牛奶 / 鸡蛋布丁',note:'冷藏甜点，回酒店再买；按包装保存。',url:'https://seicomart.co.jp/instore/rb/rb07_bread.html'},
-    egg:{name:'7-Eleven · 鸡蛋三明治',note:'配热饮当轻早餐，出发前就近买。',url:'https://www.sej.co.jp/products/a/item/053738/'},
-    chicken:{name:'Lawson · からあげクン',note:'原味鸡块，逛累了吃一小份。',url:'https://www.lawson.co.jp/recommend/original/fry/'},
-    royce:{name:'ROYCE 巧克力薯片',note:'咸甜零食，也可留到机场再买。',url:'https://www.royce.com/contents/potatochip'},
-    rokkatei:{name:'六花亭 · 葡萄干黄油夹心',note:'マルセイバターサンド；看包装保存方式与期限。',url:'https://www.rokkatei-eshop.com/store/ProductDetail.aspx?pcd=10050'},
-    shiroi:{name:'白色恋人',note:'夹心饼干，公园或机场顺路挑小盒。',url:'https://shop.ishiya.co.jp/'}
+    rice:{name:'Seicomart · 明太子饭团',channel:'便利店',note:'在饭团柜看明太子或明太子美乃滋；当天没有就选鲑鱼。HOT CHEF 只限设有该柜台的门店。',url:'https://www.seicomart.co.jp/instore/rb/rb05_rice.html'},
+    zangi:{name:'Seicomart · HOT CHEF 炸鸡',channel:'便利店热食柜',note:'ザンギ，买一小份趁热分着吃；选有 HOT CHEF 的门店。',url:'https://www.seicomart.co.jp/instore/hotchef.html?mode=pc'},
+    potato:{name:'Seicomart · 炸土豆',channel:'便利店热食柜',note:'道産ポテトのフライ；到 HOT CHEF 柜台看当天供应，与炸鸡配一份就够。',url:'https://www.seicomart.co.jp/instore/hotchef.html?mode=pc'},
+    milk:{name:'Secoma · 北海道牛乳',channel:'便利店冷藏柜',note:'配面包或饭团，优先买小包装；回住处后按包装冷藏。',url:'https://www.seicomart.co.jp/instore/milk.html'},
+    yogurt:{name:'Secoma · 丰富牛乳酸奶',channel:'便利店冷藏柜',note:'北海道とよとみヨーグルト；挑一小杯，可留作第二天早餐。',url:'https://www.seicomart.co.jp/instore/yogurtcp.html'},
+    hakodateMilk:{name:'函馆牛乳 · 橙色包装',channel:'函馆超市 / 食品店',note:'函馆时顺路看冷藏奶柜，买小包装分享。当地品牌，按柜台当日供应选。',url:'https://www.e-milk.co.jp/milk/01.html'},
+    pudding:{name:'Secoma · 鸡蛋布丁',channel:'便利店冷藏柜',note:'想吃焦糖口味就看杯底与包装；回酒店前买一杯，当天吃。',url:'https://seicomart.co.jp/instore/rb/rb07_bread.html'},
+    icecream:{name:'Secoma · 北海道牛乳冰淇淋',channel:'便利店冰柜',note:'牛乳软冰淇淋或奶味杯装二选一，买后即吃；口味看当天冰柜。',url:'https://www.seicomart.co.jp/instore/rb/rb08_candy.html'},
+    melonSour:{name:'Secoma · 哈密瓜气泡酒',channel:'便利店酒柜',note:'北海道メロンサワー，酒精 3%；想尝就选一罐，留到酒店休息时喝。',url:'https://online.seicomart.co.jp/delivery/goods_list/goods_list_3.php?o_no=760600000001'},
+    melonJelly:{name:'Secoma · 北海道哈密瓜果冻',channel:'便利店甜点柜',note:'北海道メロンゼリー；买一小杯尝味，冬季有货再选。',url:'https://seicomart.co.jp/instore/rb/rb07_bread.html'},
+    salmonCorn:{name:'Seicomart · 鲑鱼干风味玉米片',channel:'便利店零食架',note:'鮭とばコーンチップス，是一款鲑鱼风味玉米片；选一袋路上分享。',url:'https://online.seicomart.co.jp/delivery/goods_list/goods_list_3.php?disp_flg=pc&o_no=742800000001'},
+    butterChips:{name:'Calbee · 北海道黄油酱油薯片',channel:'便利店 / 超市',note:'认「北海道バターしょうゆ味」；与玉米片选一袋即可，门店库存当天看。',url:'https://www.calbee.co.jp/products/detail/?p=20260604161954'},
+    milkNoodle:{name:'日清 · 牛奶海鲜杯面',channel:'便利店 / 超市',note:'冬季限定；2026 冬季是否再售待确认。买不到就选普通海鲜面，酒店有热水时吃。',url:'https://cdn.nissin.com/gr-documents/attachments/news_posts/13556/a140ce3e418a253b/original/20251125-1.pdf?1763634649='},
+    cheeseRoll:{name:'北海道牛乳芝士卷',channel:'便利店面包 / 冷藏柜',note:'具体品牌与商品名待确认；先记想吃的口味，看到包装再选，不为它专程跑店。',url:''},
+    cheeseTara:{name:'鳕鱼芝士条 · チーズ鱈',channel:'便利店 / 超市',note:'鳕鱼片夹芝士，选一小袋。常温版和冷藏版不同，按包装保存。',url:'https://www.natori.co.jp/joy/cheese.html'},
+    egg:{name:'7-Eleven · 鸡蛋三明治',channel:'便利店冷藏柜',note:'配牛奶或热饮当早餐；作为正餐时再加饭团。',url:'https://www.sej.co.jp/products/a/item/053738/'},
+    chicken:{name:'Lawson · からあげクン',channel:'便利店热食柜',note:'鸡块一小份，配饭团或三明治更顶饱。',url:'https://www.lawson.co.jp/recommend/original/fry/'},
+    royce:{name:'ROYCE · 巧克力薯片',channel:'品牌专柜 / 机场',note:'回程再买小盒，不占前几天行李；按包装温度保存。',url:'https://www.royce.com/contents/potatochip'},
+    rokkatei:{name:'六花亭 · 葡萄干黄油夹心',channel:'六花亭门店 / 专柜',note:'マルセイバターサンド；与核桃款分开，是另一个口味。看包装保存方式与期限。',url:'https://www.rokkatei-eshop.com/store/ProductDetail.aspx?pcd=10050'},
+    taiheigen:{name:'六花亭 · 大平原',channel:'六花亭门店 / 专柜',note:'黄油小蛋糕；札幌或小樽顺路买少量，尝过喜欢再带回家。',url:'https://www.rokkatei-eshop.com/store/ProductDetail.aspx?pcd=11768'},
+    walnut:{name:'六花亭 · 核桃黄油夹心蛋糕',channel:'六花亭门店 / 专柜',note:'マルセイバターケーキ，核桃与焦糖奶油夹心；买小包装，和大平原分着尝。',url:'https://www.rokkatei-eshop.com/store/ProductDetail.aspx?pcd=11770'},
+    roastCorn:{name:'YOSHIMI · 烤玉米米果',channel:'伴手礼店 / 机场',note:'Oh!焼とうきび；烤玉米与酱油香的小袋米果，路过卖伴手礼的店再看。',url:'https://www.yoshimi-ism.com/product/oh_yakitoukibi.php'},
+    currySenbei:{name:'YOSHIMI · 汤咖喱仙贝',channel:'伴手礼店 / 机场',note:'カリカリまだある？带辣味的条状仙贝，选小袋尝味。',url:'https://www.yoshimi-ism.com/product/karikari.php'},
+    calbee:{name:'Calbee · じゃがポックル 薯条',channel:'伴手礼店 / 机场',note:'北海道伴手礼，选盐味或当日供应口味。国内航站楼不找仅限国际免税区的黄油版。',url:'https://faq.calbee.co.jp/faq_detail.html?id=112'},
+    shiroi:{name:'白色恋人',channel:'品牌专柜 / 机场',note:'夹心饼干，在白色恋人公园或回程机场顺路挑小盒。',url:'https://shop.ishiya.co.jp/'}
   };
   const m=(note,ids=[],query='')=>({note,venues:ids,query});
   const hotelBreakfast=m('酒店早餐以订单为准；没有含餐就选面包、饭团和热饮。');
-  function forDay(day,selected){
+  function buildDay(day,selected){
     const id=day.id;
     const area=id==='12-23'||id==='01-07'?'成田駅':id==='12-24'?'羽田空港':id==='12-25'||id==='12-26'?'函館駅':id==='12-27'||id==='12-28'?'登別温泉':id==='01-05'?'小樽駅':id==='01-04'||id==='01-06'?'札幌駅':'旭川駅';
     const base={area,breakfast:hotelBreakfast,lunch:m('在当天停留的车站或景点附近吃热饭。'),dinner:m('回住处前吃晚饭。'),sweets:null,notes:['年末年始营业待各店公告；候选按位置挑一家即可。'],snacks:['rice','zangi','pudding']};
@@ -62,9 +79,73 @@
     }
     if(id==='01-04'||id==='01-06'){
       const city=selected==='city',last=id==='01-06';
-      return {...base,area:'中島公園駅',breakfast:last?m('札幌公园酒店早餐按订单；早餐后退房，将行李交前台寄存。'):m('大雪山远景酒店早餐以订单为准，之后乘巴士下山。'),lunch:city?m(last?'北大这餐选食堂或 Picante 本店。食堂可 11:00 或 13:00 后去，避开学生高峰；吃完再去大通。':'先到札幌公园酒店寄存行李，再去北大；食堂与 Picante 本店二选一，抵达较晚先确认是否还供餐。',['hokudai','picante']):last?m('沿当天路线吃汤咖喱，吃完预留回酒店取行李的时间。',['garaku']):m('先到札幌公园酒店寄存，再在中岛公园附近吃简餐；站前 Picante 需要折返，只在时间充裕时考虑。',['picanteStation'],'中島公園駅 ランチ'),dinner:last?m('在新千岁国内航站楼、安检前吃晚饭。',['ebi']):m('汤咖喱；中午若吃过 Picante，晚上改二条市场附近其他热餐，之后回札幌公园酒店。',['garaku'],'二条市場 夕食'),sweets:m(last?'沿途选一个小甜点，14:30 回札幌公园酒店取行李；小鸟可丽饼只在经过札幌站且不用久等时买。':'小鸟可丽饼、CREMIA、晚间芭菲，按路过的位置选，最后回中岛公园旁酒店。',last?['bird','cremia']:['bird','cremia','pal']),notes:[...(city?['食堂和 Picante 选一餐，在北大附近吃完再往南走；午餐偏晚就缩短大通、狸小路停留。']:['北大食堂和 Picante 本店随「北大与街巷」显示，不另绕北大吃第二顿。']),...(last?['14:30 回酒店取行李，尽量 14:40 前出发；目标 15:30 左右从札幌站乘机场 JR，具体车次待确认。','1/6 是周三，Picante 札幌站前店休。']:['抵达后先寄存行李；若到札幌较晚，吃好饭再缩短下午景点。'])],snacks:last?['royce','rokkatei','shiroi']:['rice','pudding','shiroi']};
+      return {
+        ...base,area:'中島公園駅',
+        breakfast:last?m('札幌公园酒店早餐按订单；早餐后退房，将行李交前台寄存。'):m('大雪山远景酒店早餐以订单为准，之后乘巴士下山。'),
+        lunch:city?m(last?'北大这餐选食堂或 Picante 本店。食堂尽量 11:00 去；Picante 常规 11:30 开门，排队久就换简餐，午饭后直接回酒店取行李。':'先到札幌公园酒店寄存行李，再去北大；食堂与 Picante 本店二选一，抵达较晚先确认是否还供餐。',['hokudai','picante']):last?m('沿当天路线较早吃午餐，13:30 左右回酒店取行李；排队久就改买简餐。',['garaku']):m('先到札幌公园酒店寄存，再在中岛公园附近吃简餐；站前 Picante 需要折返，只在时间充裕时考虑。',['picanteStation'],'中島公園駅 ランチ'),
+        dinner:last?m('约 16:00 在新千岁国内航站楼提前吃晚饭，排队久就改便当；先办好值机并留够安检时间。',['ebi']):m('汤咖喱；中午若吃过 Picante，晚上改二条市场附近其他热餐，之后回札幌公园酒店。',['garaku'],'二条市場 夕食'),
+        sweets:m(last?'小鸟可丽饼或 CREMIA 只在上午顺路且不用久等时买；午饭后回酒店取行李。':'小鸟可丽饼、CREMIA 按路过的位置选一个；芭菲留在晚饭后。',last?['bird','cremia']:['bird','cremia','pal']),
+        notes:[...(city?['北大食堂与 Picante 选一餐；年始开门日仍需看门店公告。']:['北大食堂与 Picante 本店放在「北大与街巷」那天。']),...(last?['18:10 新千岁起飞，约 19:55 抵达成田，之后乘酒店接送车。','13:30 左右回酒店取行李、14:15 左右札幌站乘 JR、15:00 左右到机场；这些是预留目标时间，具体冬季车次待确认。','1/6 是周三，Picante 札幌站前店休。']:['抵达后先寄存行李；若到札幌较晚，吃好饭再缩短下午景点。'])],
+        snacks:last?['calbee','royce','shiroi']:['taiheigen','walnut','currySenbei']
+      };
     }
     return {...base,...plans[id]};
+  }
+  const convenience=(title,items,query,note='按当天货架搭配，买一餐的量即可。')=>({title,items,query,note});
+  function forDay(day,selected){
+    const f=buildDay(day,selected),id=day.id;
+    if(id==='01-06'&&selected==='west'){
+      f.lunch=m('白色恋人公园或宫之泽附近较早吃简餐；12:15 左右离开，回酒店取行李。',[],'白い恋人パーク レストラン');
+      f.sweets=null;
+    }
+    // Clone shared meal defaults before adding notes or practical alternatives.
+    for(const meal of ['breakfast','lunch','dinner'])f[meal]={...f[meal]};
+    const snackDays={
+      '12-23':['egg','chicken'],
+      '12-24':['cheeseTara','egg'],
+      '12-25':['hakodateMilk','icecream','melonJelly'],
+      '12-26':['hakodateMilk','salmonCorn'],
+      '12-27':['zangi','potato','pudding'],
+      '12-28':['rice','milk','cheeseTara'],
+      '12-29':['salmonCorn','butterChips'],
+      '12-30':selected==='biei'?['cheeseTara','butterChips']:['cheeseRoll','melonJelly','icecream'],
+      '12-31':['rice','milk','yogurt','milkNoodle','cheeseTara'],
+      '01-01':['pudding','melonSour','cheeseTara'],
+      '01-02':selected==='biei'?['cheeseTara','salmonCorn']:['melonJelly','cheeseRoll','milk'],
+      '01-03':['salmonCorn','cheeseTara'],
+      '01-04':['taiheigen','walnut','currySenbei'],
+      '01-05':['roastCorn','rokkatei','royce','shiroi'],
+      '01-06':['calbee','currySenbei','shiroi','royce'],
+      '01-07':['egg','chicken']
+    };
+    f.snacks=snackDays[id]||['milk','pudding'];
+    f.snackArea=id==='01-06'?'新千歳空港 国内線':id==='01-04'?'札幌駅':id==='01-05'?'小樽 堺町':f.area;
+    f.snackNote=id==='12-31'?'下午先买好元旦早餐，再挑一两样零食；冷藏品回酒店及时放冰箱。':id==='01-03'?'在旭川站前买好再上山；只带当天吃的量。':id==='01-04'||id==='01-05'?'专柜小包装尝味，喜欢的再带回家；不用今天全部买齐。':id==='01-06'?'伴手礼集中在国内航站楼安检前补齐，先值机，再按剩余时间逛。':'路过时选一两样即可；便利店与专柜的库存都以当天为准。';
+    const add=(meal,value)=>{f[meal].convenience=value;};
+    if(['12-25','12-27','12-30','01-02','01-05','01-06'].includes(id)){
+      add('breakfast',convenience('没含早餐时',['饭团 1–2 个或鸡蛋三明治','牛奶或酸奶；想吃热的加一份鸡蛋'],`${f.area} コンビニ`,'按胃口选一套；已有酒店早餐就不用另买。'));
+    }
+    if(id==='12-23')add('dinner',convenience('落地后简单吃饱',['饭团 2 个或一份便当','鸡蛋三明治或热鸡块','水或热饮'],'成田空港 コンビニ','先看酒店接送车时间，买好再去乘车。'));
+    if(id==='12-24')add('breakfast',convenience('出发前早餐',['昨晚买的面包或三明治','牛奶或热饮'],'成田空港 コンビニ','早上赶车，尽量前一晚备好。'));
+    if(id==='12-26')add('lunch',convenience('带上 JR 的午餐',['一份便当，或饭团 2 个＋鸡蛋','一小盒牛奶或水'],'函館駅 弁当','在函馆站附近买好；不为找特定口味耽误乘车。'));
+    if(id==='12-28')add('lunch',convenience('巴士衔接紧时',['明太子或鲑鱼饭团 2 个','HOT CHEF 炸鸡小份','热茶'],'登別温泉 セイコーマート','有热食柜才选炸鸡；找休息处吃完再上巴士。'));
+    if(id==='12-29')add('lunch',convenience('中转简餐',['一份热便当或饭团 2 个','鸡蛋或小份炸鸡','热饮'],'札幌駅 コンビニ','明太子蟹肉饭的具体商品待确认，遇到再选；没有就选当天便当。'));
+    if((id==='12-30'||id==='01-02')&&selected==='biei')add('lunch',convenience('去美瑛前带好',['饭团 2 个＋鸡蛋三明治，或一份便当','热水与一小袋零食'],'旭川駅 コンビニ','按胃口组合；早上在旭川买好，白金一带不临时找店。'));
+    if(id==='12-31')add('dinner',convenience('跨年晚饭与明早备餐',['今晚：荞麦面＋熟食或饭团','明早：面包或饭团＋牛奶 / 酸奶'],'イオン旭川駅前 食品','下午采购；隔夜食物看保质期和保存温度，不把热食留到明天。'));
+    if(id==='01-01'){
+      add('breakfast',convenience('昨晚备好的早餐',['面包或饭团','牛奶 / 酸奶＋鸡蛋'],'旭川駅 コンビニ','有酒店早餐时直接在酒店吃；无需元旦早上再找店。'));
+      add('dinner',convenience('餐厅关门时',['一份当日便当或饭团 2 个','杯面或热汤','小份蔬菜 / 鸡蛋'],'旭川駅 コンビニ','牛奶海鲜面若未上市就选普通海鲜面；按胃口减掉重复主食。'));
+    }
+    if(id==='01-03')add('lunch',convenience('上旭岳前备午餐',['一份便当，或饭团 2 个＋鸡蛋三明治','保温杯热水'],'旭川駅 コンビニ','乘巴士前在站前买齐，只带一餐；抵达后找室内休息处吃。'));
+    if(id==='01-06')add('dinner',convenience('机场排队长时',['国内航站楼买一份便当或三明治＋饭团','水或热饮'],'新千歳空港 国内線 コンビニ','也可约 19:55 抵达成田后买简餐，先核对酒店接送时间，不等餐厅长队。'));
+    if(f.sweets){
+      const afternoon=f.sweets.venues.filter(key=>key!=='pal');
+      const evening=f.sweets.venues.filter(key=>key==='pal');
+      if(afternoon.length)f.lunch.afternoonTea={note:id==='01-05'?'堺町走累了，选一份芝士蛋糕坐一会儿。':id==='01-06'?'只在上午顺路且不用久等时买；午饭后回酒店取行李。':(id==='12-30'||id==='01-02')?'森之时计有空位再坐，留足回旭川的时间。':'小鸟可丽饼或 CREMIA，路过时挑一个。',venues:afternoon};
+      if(evening.length)f.dinner.afterMeal={note:'晚饭后还有胃口，再去薄野吃一杯芭菲。',venues:evening};
+    }
+    delete f.sweets;
+    return f;
   }
   window.FOOD={venues,snacks,forDay};
 })();

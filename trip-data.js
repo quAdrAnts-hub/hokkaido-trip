@@ -140,15 +140,15 @@
     shukutsu:leg('中央巴士＋步行','车程约 20–25 分钟','小樽站前乘 10 / 11 路 →「おたる水族館」，再步行约 10 分钟去展望台。','普通路线巴士无需预约。积雪或临时管制时不前往。',[link('巴士走法',U.otarubus),link('展望台开放说明',U.shukutsu)],'冬季时刻、积雪与步行通行情况待确认'),
     shukutsuTengu:leg('巴士换乘＋缆车','约 60–90 分钟起','水族馆站乘 10 / 11 路回小樽站前；4 号乘车处换 9 路至「天狗山ロープウエイ」，车程约 20 分钟；索道单程约 4 分钟。候车另计。','巴士无需预约，缆车票另购；若接续不好，就在两个远端点中选一个。',[link('祝津巴士',U.otarubus),link('天狗山交通 / 购票',U.tengu)],'2026–27 冬季巴士与索道时段待确认'),
     tenguBack:leg('缆车＋中央巴士 9 路','车程约 24 分钟＋候车','先乘索道下山约 4 分钟，再在山麓站乘 9 路至小樽站前约 20 分钟。错过合适巴士时再考虑出租车。','索道使用有效往返票；路线巴士无需预约。',[link('官方交通',U.tengu)],'冬季末班待确认'),
-    airport:leg('JR Airport','约 33–43 分钟','札幌站 → 新千岁机场站，机场国内航站楼地下 1 层。原行程 15:30 左右离开札幌，雪天再提前。','普通自由席无需预约；4 号车 u-seat 须另购指定席券。',[link('机场铁路',U.airport),link('指定席预约',U.jrbook),link('运行信息',U.jrstatus)],'1/6 车次与运行情况出发前复核'),
-    flightNrt:leg('飞机','到达时间待补','新千岁 20:40 → 成田；按现有行程时间，航班号、到达航站楼与落地后酒店接驳待补。','需提前购买机票；以现有订单为准。',[],'航班号与订单待确认'),
+    airport:leg('JR Airport','日间约 36–43 分钟起','札幌站 → 新千岁机场站，出站按指示前往国内航站楼。目标 14:15 左右从札幌出发、15:00 左右到机场；这是行程预留时间，具体车次待确认。雪天或运行延误时再提前。','普通自由席无需预约；4 号车 u-seat 须另购指定席券。',[link('机场铁路','https://www.jrhokkaido.co.jp/airport/'),link('指定席预约',U.jrbook),link('运行信息',U.jrstatus)],'1/6 冬季车次与运行情况出发前复核'),
+    flightNrt:leg('飞机','1 小时 45 分钟','1/6 新千岁 18:10 → 成田 19:55，均为日本当地时间；航班号和到达航站楼按机票补齐。落地取行李后乘酒店接送。','需提前购买机票；以现有订单为准。',[],'起降时间已确认；航班号、航站楼待补'),
     naritaAirport:leg('JR / 酒店接驳','铁路约 10–15 分钟','从 JR 成田站乘成田线往成田机场，按机票航站楼下车；如从酒店出发则确认接驳。目标 13:00 左右到国际航站楼。','JR 普通列车现场购票；酒店接驳按酒店规定。',[link('JR 东日本',U.jrbook)],'航站楼、酒店接驳与所选车次待确认')
   };
   const s=(place,time,desc='',via=null,kind='',title='')=>({place,time,desc,via,kind,title});
   const parkFromStation=leg('南北线＋步行','地铁约 5 分钟；全程预留 20–30 分钟','JR 札幌站步行至地铁「さっぽろ」站，乘南北线真驹内方向至「中岛公园」。3 号出口旁就是札幌公园酒店；大件行李可按酒店说明走 1 号出口一侧电梯。','无需预约；车站购票或使用适用 IC 卡。',[link('酒店交通',U.sapporopark),link('札幌地铁',U.subway)],'全程预留含站内步行与候车，雪天再留余量');
   const parkToStation=leg('南北线＋步行','地铁约 5 分钟；全程预留 20–30 分钟','酒店旁「中岛公园」站乘南北线麻生方向至「さっぽろ」，按指示步行到 JR 札幌站。带行李时可走 1 号出口一侧电梯。','无需预约；车站购票或使用适用 IC 卡。',[link('酒店交通',U.sapporopark),link('札幌地铁',U.subway)],'全程预留含站内步行与候车，JR 转乘及雪天另留余量');
   const parkFromCentre=place=>subway(place==='garaku'?'约 25–35 分钟':'约 15–25 分钟',place==='garaku'?'从二条市场旁 GARAKU 步行至薄野站，乘南北线真驹内方向至中岛公园站，3 号出口旁回札幌公园酒店。':'从狸小路或芭菲店一带步行至薄野站，乘南北线真驹内方向至中岛公园站，3 号出口旁回札幌公园酒店。');
-  const H={art:{place:'art',note:'12/23 · 入住与休息'},nagisa:{place:'nagisa',note:'12/24 · 温泉与晚餐按订单'},global:{place:'global',note:'12/25 · 抵达后先寄存行李'},kitutuki:{place:'kitutuki',note:'12/26 · 19:00 前入住，晚餐按订单'},adex:{place:'adex',note:'12/27–28 · 两家相邻，入住酒店以订单确认'},ys:{place:'ys',note:'12/29–1/2 · 旭川站前'},lavista:{place:'lavista',note:'1/3 · La Vista Daisetsuzan｜晚餐、温泉'},sapporo:{place:'sapporopark',note:'1/4–5 · 中岛公园站 3 号出口旁；1/6 上午退房寄存，14:30 回来取行李'},narita:{name:'成田住宿',note:'1/6 · 酒店名称与晚间接驳待补'}};
+  const H={art:{place:'art',note:'12/23 · 入住与休息'},nagisa:{place:'nagisa',note:'12/24 · 温泉与晚餐按订单'},global:{place:'global',note:'12/25 · 抵达后先寄存行李'},kitutuki:{place:'kitutuki',note:'12/26 · 19:00 前入住，晚餐按订单'},adex:{place:'adex',note:'12/27–28 · 两家相邻，入住酒店以订单确认'},ys:{place:'ys',note:'12/29–1/2 · 旭川站前'},lavista:{place:'lavista',note:'1/3 · La Vista Daisetsuzan｜晚餐、温泉'},sapporo:{place:'sapporopark',note:'1/4–5 · 中岛公园站 3 号出口旁；1/6 上午退房寄存，13:30 回来取行李'},narita:{name:'成田住宿',note:'1/6 · 19:55 落地后乘酒店接送。酒店名称待补；集合点、班次、末班、车程与是否需预约由酒店确认。'}};
   const asahiReturn=[s('asahikawa','傍晚','回旭川后再吃晚饭。',L.bieiAsahi),s('aeon','晚餐','站前吃一餐；年末营业到店前再看。',walk('约 3–5 分钟'),'餐食')];
   const variants={
     biei:{label:'美瑛',sub:'青池 · 白须瀑布',city:'旭川 / 美瑛',title:'去美瑛看雪',note:'先确认回程，再慢慢看雪。',alert:'出发前看天气、JR、十胜岳与景区公告。青池可能封冻积雪；当季灯光与观光巴士待确认。',alertUrl:U.biei,stops:[s('asahikawa','早上','早餐后出发，先看 JR 与天气。'),s('biei','上午','车站周边吃午餐或带简餐，按巴士时间安排。',L.asahiBiei,'午餐'),s('blue','午后','只在开放步道停留。',L.blue),s('shirahige','下午','到桥上看瀑布，积雪处慢走。',L.waterfall),s('biei','返程','按已查好的班次回站。',L.whiteBiei),...asahiReturn]},
@@ -156,7 +156,7 @@
     furano:{label:'富良野',sub:'滑雪场 · 半日雪地',city:'旭川 / 富良野',title:'把半天留给雪场',note:'课程与交通都确认后再出发。',alert:'2026–27 雪季课程、租赁与开放区域待确认。没有预约课程时，只选择当天开放的游览活动。',alertUrl:U.school,stops:[s('asahikawa','早上','早点吃早餐，确认富良野线回程。'),s('furano','上午','下车后换乘前往雪场。',L.asahiFurano),s('ski','上午','从富良野区域进入，按已预约的课程时间安排。',L.furanoSki),s('prince','午餐','雪场或酒店开放餐厅吃午饭。',walk('约 5–10 分钟'),'餐食'),s('ski','午后','留在同一区域，不临时跨雪场。',walk('约 5–10 分钟')),s('furano','下午','预留等车与取行李时间。',L.skiFurano),s('asahikawa','傍晚','回旭川。',L.furanoAsahi),s('aeon','晚餐','站前吃饭或带回酒店。',walk('约 3–5 分钟'),'餐食')]},
     west:{label:'神宫与白色恋人',sub:'圆山 · 甜点',city:'札幌',title:'神宫与一座甜点花园',note:'到札幌较晚时，只保留其中一处。',stops:[s('hokkaidoshrine','午后','从圆山公园方向步行入神宫。',subway('约 35–45 分钟','札幌站乘南北线至大通，换东西线至圆山公园站，步行约 15 分钟。')),s('shiroi','下午','吃点甜的，慢慢逛。园区当季营业与收费区域以官网为准。',subway('约 35–45 分钟','圆山公园站乘东西线至宫之泽站，步行约 7–10 分钟。'),'甜点'),s('garaku','晚餐','汤咖喱。到店前看营业公告；等位太久就留到 1/6。',subway('约 35–45 分钟','宫之泽站乘东西线至大通站，从狸小路方向步行至店。'),'餐食'),s('tanuki','晚间','晚饭后散散步。',walk('约 5–10 分钟')),s('pal','甜品','想吃再去，选无酒精口味；营业待确认。',walk('约 5–10 分钟'),'可选')]},
     city:{label:'北大与街巷',sub:'大通 · 狸小路',city:'札幌',title:'回到札幌的街道',note:'步行多一点，安排少一点。',stops:[s('hokudai','午后','校园主路散步，雪天不走偏僻小道。',walk('约 12–20 分钟')),s('odori','下午','路过大通，走一小段。',subway('约 20–30 分钟','步行回札幌站，乘南北线至大通站；也可走地下步行空间。')),s('garaku','晚餐','早点吃汤咖喱，先看当天营业。',walk('约 10–15 分钟'),'餐食'),s('tanuki','晚间','逛逛商店，买一点喜欢的东西。',walk('约 5–10 分钟')),s('pal','甜品','还有胃口再去，选无酒精口味。',walk('约 5–10 分钟'),'可选')]},
-    park:{label:'中岛公园慢日',sub:'公园 · 汤咖喱',city:'札幌',title:'公园里，再看一会儿雪',note:'午饭后就准备去机场。',stops:[s('nakajima','09:30','公园主路短程散步。',subway('约 20–30 分钟','札幌站乘南北线至中岛公园站，出站进入公园。')),s('garaku','午餐','若 1/4 没吃到，今天再试一次。以当天营业为准。',subway('约 15–25 分钟','中岛公园站乘南北线至薄野站，步行到 GARAKU。'),'餐食'),s('tanuki','午后','最后逛一会儿，不晚于 14:30 开始取行李。',walk('约 5–10 分钟'))]}
+    park:{label:'中岛公园慢日',sub:'公园 · 汤咖喱',city:'札幌',title:'公园里，再看一会儿雪',note:'午饭后就准备去机场。',stops:[s('nakajima','09:30','公园主路短程散步。',subway('约 20–30 分钟','札幌站乘南北线至中岛公园站，出站进入公园。')),s('garaku','午餐','若 1/4 没吃到，今天再试一次。以当天营业为准。',subway('约 15–25 分钟','中岛公园站乘南北线至薄野站，步行到 GARAKU。'),'餐食'),s('tanuki','午后','有余裕再短逛，13:30 回酒店取行李。',walk('约 5–10 分钟'))]}
   };
   const days=[
     {id:'12-23',date:'2026-12-23',city:'成田',title:'先睡一个好觉',note:'落地后的晚上，留给入住和休息。',hotel:H.art,stops:[s('nrt','晚间','入境、取行李。落地时间与航站楼待补。'),s('art','抵达后','办理入住，便利店买些晚餐和明早吃的东西。',L.art,'晚餐')]},
@@ -177,7 +177,7 @@
     {id:'01-07',date:'2027-01-07',city:'成田',title:'表参道走走，然后回家',note:'13:00 左右到国际航站楼，16:00 起飞。',stops:[s('naritast','08:30','酒店早餐后，寄存行李。酒店名称待补，酒店到车站这段按实际地址确认。'),s('omote','上午','表参道散步。',walk('约 10–15 分钟')),s('naritasan','上午','新胜寺，返程沿表参道吃午餐。',walk('约 10–15 分钟'),'午餐'),s('naritast','12:00前后','取行李，准备去机场。',walk('约 20–30 分钟')),s('nrt','13:00左右','办理值机；16:00 回程航班，目的地与航班号待补。',L.naritaAirport)]}
   ];
   const sapporoArrival=[s('lavista','早上','早餐后退房，按巴士班次下山。'),s('asahikawa','上午','与 JR 留出换乘余量。',L.ideyuBack),s('sapporo','中午后','抵达后换地铁，先去酒店放行李。',L.asahiSapporo),s('sapporopark','抵达后','前台寄存行李，再吃午餐和出门；通常 15:00 起入住，以订单为准。',parkFromStation,'寄存行李')];
-  const airportEnd=[s('sapporo','15:30目标','建议 15:10 前到 JR 乘车区域，计划 15:30 左右乘机场列车；具体车次待确认。',parkToStation),s('cts','17:00前','值机前后逛 Royce、角色店，买伴手礼、吃晚餐。',L.airport,'晚餐'),s('nrt','20:40起飞','到达时间与落地后的住宿接驳待补。',L.flightNrt)];
+  const airportEnd=[s('sapporo','14:15左右','目标乘机场列车；提前到 JR 乘车区域，具体冬季车次待确认。',parkToStation),s('cts','15:00左右','这是目标到达时间，航班 18:10 起飞。先确认值机、托运与安检安排，再买伴手礼、早点吃晚餐；按航司要求提前到登机口。',L.airport,'晚餐'),s('nrt','19:55','18:10 从新千岁起飞。到达后取行李，按酒店通知到集合点乘接送车；班次、末班及是否需预约待酒店确认。',L.flightNrt)];
   function finishDay(day){
     const last=day.stops[day.stops.length-1];
     if(day.hotel?.place==='ys'&&last.place!=='ys')return {...day,stops:[...day.stops,s('ys','回酒店','暖暖地休息一晚。',walk(last.place==='daikoku'?'约 12–18 分钟':'约 5–8 分钟'))]};
@@ -203,17 +203,22 @@
     if(day.id==='01-04')stops=[...sapporoArrival,...stops,s('sapporopark','回酒店','回札幌公园酒店办理入住、休息。',parkFromCentre(stops.at(-1).place))];
     if(day.id==='01-06'){
       if(selected==='west'){
-        stops=stops.slice(0,3).map((x,i)=>({...x,time:['09:00','10:45','午餐'][i]}));
-        stops[2].desc='若 1/4 没吃到，今天试一次；排队太久就去机场吃，不耽误取行李。';
+        stops=[s('shiroi','10:00左右','上午只逛白色恋人园区，开门时间待当季确认；可在园区吃早午餐，12:15 左右离开，留足回酒店时间。',subway('约 45–60 分钟','中岛公园站乘南北线至大通，换东西线宫之泽方向至终点，再步行约 7–10 分钟。'),'午餐')];
+        meta.label='白色恋人';meta.sub='上午园区 · 早午餐';meta.summary='白色恋人 → 酒店取行李 → 新千岁 → 成田';
       }else if(selected==='city'){
-        stops=stops.filter(x=>!['garaku','pal'].includes(x.place)).map((x,i)=>({...x,time:['上午至午餐','午餐后','午后短逛'][i]}));
-        stops[0].desc='校园散步后在北大食堂或 Picante 本店吃午餐；地址见下方饮食区。食堂避开 11:30–13:00，年始开门待确认。';
-        stops.find(x=>x.place==='tanuki').via=walk('约 10–15 分钟','大通向南到狸小路；按取行李时间缩短停留。');
-        meta.summary='北大散步与午餐 → 大通 → 狸小路 → 新千岁机场';
+        stops=stops.filter(x=>x.place==='hokudai').map(x=>({...x,time:'09:30左右',kind:'午餐',desc:'校园主路散步，11:00 左右在附近吃早午餐；北大食堂年始营业待确认，也可选 Picante。12:30 前离开，排队太久就换简餐。'}));
+        meta.label='北大与午餐';meta.sub='校园散步 · 早午餐';meta.summary='北大与午餐 → 酒店取行李 → 新千岁 → 成田';
+      }else{
+        stops=stops.filter(x=>['nakajima','garaku'].includes(x.place)).map(x=>({...x,time:x.place==='nakajima'?'09:30':'11:30左右'}));
+        stops.find(x=>x.place==='garaku').desc='若 1/4 没吃到，营业后早点来；开门时间待确认。12:15 还未入座就换附近简餐，12:45 前开始回酒店。';
+        meta.label='中岛公园与午餐';meta.sub='短程散步 · 汤咖喱';meta.summary='中岛公园 → 午餐 → 酒店取行李 → 新千岁 → 成田';
       }
-      stops=[s('sapporopark','早上','早餐后退房，行李交前台寄存；通常 11:00 前退房，取件安排入住时确认。'),...stops,s('sapporopark','14:30','回札幌公园酒店取行李，尽量 14:40 前出发去札幌站。',parkFromCentre(stops.at(-1).place),'取行李'),...airportEnd];
+      const returnLeg=selected==='west'?subway('约 45–60 分钟','白色恋人园区步行至宫之泽站，乘东西线新札幌方向至大通，换南北线真驹内方向至中岛公园站，回札幌公园酒店。'):selected==='city'?subway('约 25–35 分钟','从北大一带回地铁北12条站或札幌站，乘南北线真驹内方向至中岛公园站，回札幌公园酒店。'):parkFromCentre(stops.at(-1).place);
+      stops=[s('sapporopark','早上','早餐后退房，行李交前台寄存；取件安排入住时确认。'),...stops,s('sapporopark','13:30','回札幌公园酒店取行李，尽量 13:40 前出发去札幌站。',returnLeg,'取行李'),...airportEnd];
+      meta.alert='13:30 回酒店取行李，14:15 左右乘机场 JR、15:00 左右到机场均为目标时间；具体冬季班次待确认。雪天或铁路延误时提前结束上午行程。';
+      meta.alertUrl=U.jrstatus;
     }
-    return finishDay({...day,...meta,stops,hotel:day.hotel,city:day.id==='01-06'?'札幌 / 新千岁':v.city,note:day.id==='01-06'?'14:30 回札幌公园酒店取行李，15:30 左右从札幌站前往机场。':v.note});
+    return finishDay({...day,...meta,stops,hotel:day.hotel,city:day.id==='01-06'?'札幌 / 成田':v.city,note:day.id==='01-06'?'13:30 取行李 · 18:10 新千岁起飞 · 19:55 成田到达 · 酒店接送。':v.note});
   }
   // Revision 2: public transport, separate accommodation/bathing, combined Biei–Furano day.
   const revisedLeg=(mode,duration,steps,ticket,links=[],status='')=>leg(mode,duration,steps,ticket,links,status);
@@ -344,7 +349,7 @@
   variants.west.stops[0].via=subway('约 35–45 分钟','从札幌公园酒店旁的中岛公园站乘南北线麻生方向至大通，换东西线宫之泽方向至圆山公园站，再步行约 15 分钟入神宫。');
   variants.city.stops[0].via=subway('约 25–35 分钟','从札幌公园酒店旁的中岛公园站乘南北线麻生方向至北12条站，沿开放道路步行进入北海道大学。');
   variants.park.stops[0].via=walk('约 3–5 分钟','札幌公园酒店就在中岛公园旁，步行到开放园路，不绕行札幌站。');
-  variants.park.stops.find(x=>x.place==='tanuki').desc='最后逛一会儿，预留返程，14:30 回札幌公园酒店取行李。';
+  variants.park.stops.find(x=>x.place==='tanuki').desc='有余裕再短逛，预留返程，13:30 回札幌公园酒店取行李。';
   const otaruDay=findDay('01-05');
   otaruDay.stops[0].desc='换乘 JR 去南小樽；实际班次出发前确认。';
   otaruDay.stops[0].via=parkToStation;
